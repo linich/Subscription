@@ -103,8 +103,7 @@
 				14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */,
 				14999EFF228D97F700B56E03 /* SubscriptionSelectorViewModel.swift */,
 			);
-			name = SubscriptionSelector;
-			path = ../SubscriptionSelector;
+			path = SubscriptionSelector;
 			sourceTree = "<group>";
 		};
 		1449FB35228D48FB00317584 /* CountrySelector */ = {

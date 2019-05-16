@@ -9,11 +9,12 @@
 import UIKit
 
 
-// Решил оставить этому классу постфик Controller так как, он ведет себя как контроллер -  является источником данных для UICollectionView
-// и вызвает методы модели в ответ на действия пользователя.
+// Decided to leave this class a postfik Controller since it behaves like a controller - is the data source for the UICollectionView
+// and invokes model methods in response to user actions.
 class SubscriptionPeriodsCollectionViewController: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let viewModel: SubscriptionSelectorViewModel
+    weak var collectionView: UICollectionView?
     enum CellIds : CustomStringConvertible {
         case SubscriptionPeriod
         var description : String {
@@ -25,7 +26,21 @@ class SubscriptionPeriodsCollectionViewController: NSObject, UICollectionViewDat
 
     init (collectionView: UICollectionView, viewModel: SubscriptionSelectorViewModel) {
         self.viewModel = viewModel
+        self.collectionView = collectionView
         super.init()
+    }
+
+    public func startLifecycle() {
+        setupCollectionView()
+        viewModel.onSubscriptionChanged = {[weak self] () in
+            self?.collectionView?.reloadData()
+        }
+    }
+
+    fileprivate func setupCollectionView() {
+        guard let collectionView = self.collectionView else {
+            return
+        }
 
         collectionView.register(UINib(nibName: "SubscriptionPeriodCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: String(describing: CellIds.SubscriptionPeriod))
         collectionView.dataSource = self
@@ -55,6 +70,5 @@ class SubscriptionPeriodsCollectionViewController: NSObject, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selectSubscription(atIndex: indexPath.item)
-        collectionView.reloadData()
     }
 }

@@ -11,11 +11,23 @@ import UIKit
 
 class SubscriptionGeneralInfoColletionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    let viewModel: SubscriptionSelectorViewModel
-
+    private let viewModel: SubscriptionSelectorViewModel
+    private weak var collectionView: UICollectionView?
     init (collectionView: UICollectionView, viewModel: SubscriptionSelectorViewModel) {
         self.viewModel = viewModel
+        self.collectionView = collectionView
         super.init()
+    }
+
+    public func setup(){
+        self.setupCollectionView()
+    }
+
+    fileprivate func setupCollectionView() {
+        guard let collectionView = self.collectionView else {
+            return
+        }
+
         collectionView.register(UINib(nibName: "SubscriptionGeneralInfoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Details")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -41,5 +53,4 @@ class SubscriptionGeneralInfoColletionViewDataSource: NSObject, UICollectionView
         cell.label.text = data.text
         return cell
     }
-
 }

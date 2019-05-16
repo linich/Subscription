@@ -21,11 +21,12 @@ struct SubscriptionGeneralInfo {
 class SubscriptionSelectorViewModel {
     public private(set) var subscripionPeriodList: [SubscriptionPeriod]
     public var subscriptionGeneralInfoList: [SubscriptionGeneralInfo]
+    public var onSubscriptionChanged: (()->())?
     public let phoneNumber: String
     public init(_ countryId: String) {
-        // Использовать countryId для определения списка подписок доступных для этой страны а также списока общей информации.
-        // В реальном приложении сдесь будет формироваться список SKProduct и на его основании будет формироваться
-        // список SubscriptionPeriod
+        // Use countryId to determine the list of subscriptions available for that country as well as a list of general information.
+        // In a real application, a list of SKProduct will be formed here and on its basis will be formed
+        // to list of SubscriptionPeriod
         phoneNumber = "+375 29 223 43 12"
         subscripionPeriodList = [
             SubscriptionPeriod(attributedText: NSAttributedString(string: "3\nmonths\n$2.99"), selected: false),
@@ -37,11 +38,15 @@ class SubscriptionSelectorViewModel {
         SubscriptionGeneralInfo(image: #imageLiteral(resourceName: "Belgium"), text: "Something about Belgium")]
     }
 
-    public func activate(){
-        print("SubscriptionSelectorViewModel->activate")
+    public func activate(completion: (()->())?){
+        completion?()
     }
 
     public func selectSubscription(atIndex: Int){
+        defer {
+            self.onSubscriptionChanged?()
+        }
+
         subscripionPeriodList = subscripionPeriodList.enumerated().map({ (index, info) -> SubscriptionPeriod in
             return SubscriptionPeriod(attributedText: info.attributedText, selected: index == atIndex)
         })

@@ -10,6 +10,28 @@ import UIKit
 
 
 class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
+    private let viewModel: CountryListViewModel
+    private weak var tableView: UITableView?
+
+    init (tableView: UITableView, viewModel: CountryListViewModel) {
+        self.viewModel = viewModel
+        self.tableView = tableView
+        super.init()
+
+    }
+
+    public func setup(){
+        setupTableView()
+    }
+
+    fileprivate func setupTableView() {
+        guard let tableView = self.tableView else {
+            return
+        }
+        tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "Suggestion")
+        tableView.dataSource = self
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfItems
     }
@@ -27,16 +49,5 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
             feature.name
         }).joined(separator: " ")
         return cell
-    }
-
-
-
-
-    let viewModel: CountryListViewModel
-    init (tableView: UITableView, viewModel: CountryListViewModel) {
-        self.viewModel = viewModel
-        super.init()
-        tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "Suggestion")
-        tableView.dataSource = self
     }
 }

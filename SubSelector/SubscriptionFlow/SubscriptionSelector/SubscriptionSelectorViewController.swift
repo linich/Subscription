@@ -8,8 +8,8 @@
 
 import UIKit
 
-// SubscriptionSelectorViewController отображает общую информацию о подписке и ее возможные периоды. Предоставляет возможность
-// аткивизировать подписку на определенный.
+// SubscriptionSelectorViewController displays general subscription information and its possible periods. Allows
+// activate subscription for a specific period.
 
 class SubscriptionSelectorViewController: UIViewController {
 
@@ -22,16 +22,30 @@ class SubscriptionSelectorViewController: UIViewController {
     private var subscribtionPeriodsCollectionViewController: SubscriptionPeriodsCollectionViewController?
 
     @IBAction func onActivateTouch(_ sender: UIButton) {
-        self.viewModel?.activate()
-        self.onActivateCompleted?(self)
+        self.viewModel?.activate(completion: {[weak self]() in
+            OperationQueue.main.addOperation({
+                guard let this = self else {
+                    return
+                }
+                this.onActivateCompleted?(this)
+            })
+        })
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupDataSources()
+    }
+
+    fileprivate func setupDataSources() {
         if let viewModel = self.viewModel {
             self.subscriptionGeneralInfoCollectionViewDataSource = SubscriptionGeneralInfoColletionViewDataSource(collectionView: self.subscriptionGeneralInfosCollectionView, viewModel: viewModel)
             self.subscribtionPeriodsCollectionViewController = SubscriptionPeriodsCollectionViewController(collectionView: self.subscriptionPeriodsCollectionView, viewModel: viewModel)
+
+            self.subscriptionGeneralInfoCollectionViewDataSource?.setup()
+            self.subscribtionPeriodsCollectionViewController?.startLifecycle()
         }
     }
+
 }

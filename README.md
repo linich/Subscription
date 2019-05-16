@@ -1,13 +1,13 @@
 #  Subscriptions
 
-Программа состоит из трех главных классов: CountryListViewController, SubscriptionSelectorViewController и SubscriptionFlow.
+The program consists of three main classes: CountryListViewController, SubscriptionSelectorViewController and SubscriptionFlow.
 
-*CountryListViewController* отображет список доступных стран и оповещает через функцию обратного вызова о том, какая страна была выбрана.
+*CountryListViewController* displays a list of available countries and notifies through the callback function which country has been selected.
 
-*SubscriptionSelectorViewController* позволяет выбрать и активизировать подписку.
+*SubscriptionSelectorViewController* allows you to select and activate a subscription.
 
-*SubscriptionFlow* отвечает за создание, настройку и отображение  ViewController-ов. Он определяет в какой последовательности и в ответ на какие действие от пользователя будет происходить переключение между ViewController-ами.
+*SubscriptionFlow* is responsible for creating, customizing and displaying ViewControllers. It determines in what sequence and in response to which actions from the user will switch between ViewControllers.
 
-ViewController-ы используют viewModel для получение данных специфичных для этих контроллеров. В текущей реализации viewModel содержат данные в самих себе. В реальнной системе viewModel-и будут обращаться к сервисам для получения данных.
+ViewControllers use viewModel to get data specific to these controllers. In the current implementation, the viewModel contains data in itself. In a real system, the viewModel will use a services to get data.
 
-*SubscriptionSelectorViewController* состоит из двух *UICollectionView*. Одна отображает общую информацию о подписке. Вторая позволяет выбрать период подписки.
+*SubscriptionSelectorViewController* consists of two *UICollectionViews*. One displays general subscription information. The second allows user to select the subscription period.

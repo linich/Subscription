@@ -10,18 +10,24 @@ import UIKit
 
 class CountryListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
 
+    // onCountrySelected - the first parameter is the controller itself, the second id of the country.
     public var onCountrySelected: ((CountryListViewController, String) ->())?
     public var viewModel: CountryListViewModel?
     public var countryListTableViewDataSource: CountryListTableViewDataSource?
     
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func setupViewModelAndDataSource() {
         if let viewModel = self.viewModel {
             viewModel.onItemsChanged = {[weak self] () in self?.tableView.reloadData() }
-            self.countryListTableViewDataSource = CountryListTableViewDataSource.init(tableView: self.tableView, viewModel: viewModel)
+            self.countryListTableViewDataSource = CountryListTableViewDataSource(tableView: self.tableView, viewModel: viewModel)
+            self.countryListTableViewDataSource?.setup()
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewModelAndDataSource()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
