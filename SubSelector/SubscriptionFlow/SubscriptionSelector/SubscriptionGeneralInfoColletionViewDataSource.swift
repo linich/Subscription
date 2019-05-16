@@ -1,5 +1,5 @@
 //
-//  SubscriptionGroupInfoDataSource.swift
+//  SubscriptionGeneralInfoColletionViewDataSource.swift
 //  SubSelector
 //
 //  Created by Maxim Linich on 5/15/19.
@@ -9,14 +9,14 @@
 import UIKit
 
 
-class SubscriptionGroupInfoDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+class SubscriptionGeneralInfoColletionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let viewModel: SubscriptionSelectorViewModel
 
     init (collectionView: UICollectionView, viewModel: SubscriptionSelectorViewModel) {
         self.viewModel = viewModel
         super.init()
-        collectionView.register(UINib(nibName: "SubscriptionDetailsCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Details")
+        collectionView.register(UINib(nibName: "SubscriptionGeneralInfoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Details")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
@@ -29,14 +29,14 @@ class SubscriptionGroupInfoDataSource: NSObject, UICollectionViewDataSource, UIC
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.selectedSubscriptionDetails.count
+        return viewModel.subscriptionGeneralInfoList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Details", for: indexPath) as? SubscriptionDetailsCollectionViewCell  else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Details", for: indexPath) as? SubscriptionGeneralInfoCollectionViewCell  else {
             return UICollectionViewCell()
         }
-        let data = self.viewModel.selectedSubscriptionDetails[indexPath.item]
+        let data = self.viewModel.subscriptionGeneralInfoList[indexPath.item]
         cell.imageView.image = data.image
         cell.label.text = data.text
         return cell

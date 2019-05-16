@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubscriptionDetailsCollectionViewCell: UICollectionViewCell {
+class SubscriptionGeneralInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
 }

@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionSelectorViewController" customModule="SubSelector" customModuleProvider="target">
             <connections>
-                <outlet property="selectedSubscriptionDetailsCollectionView" destination="Jgd-AW-5r2" id="Rbi-UM-nN4"/>
-                <outlet property="subscriptionCollectionView" destination="Olr-XK-cmb" id="uJF-wN-hFY"/>
+                <outlet property="subscriptionGeneralInfosCollectionView" destination="Jgd-AW-5r2" id="Rbi-UM-nN4"/>
+                <outlet property="subscriptionPeriodsCollectionView" destination="Olr-XK-cmb" id="uJF-wN-hFY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

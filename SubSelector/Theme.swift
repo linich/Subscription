@@ -11,4 +11,6 @@ import UIKit
 class Theme {
     static let selectionColor = UIColor.blue
     static let appTextColor = UIColor.black
+    static let selectedTextColor = UIColor.white
+    static let backgroundColor = UIColor.white
 }

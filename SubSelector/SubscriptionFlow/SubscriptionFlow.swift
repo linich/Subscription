@@ -9,9 +9,6 @@
 import UIKit
 
 // SubscriptionFlow отвечат за то, как будет происходить процесс покупки подписки.
-// Этот класс создает и настраивает все принимющие участие в процессе покупки ViewController-ы
-//
-
 class SubscriptionFlow {
     public var onActivate:  (()->())?
     private let rootController: UINavigationController

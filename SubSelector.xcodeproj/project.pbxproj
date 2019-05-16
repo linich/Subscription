@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1449FB2C228C663D00317584 /* SubscriptionDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB2A228C663D00317584 /* SubscriptionDetailsCollectionViewCell.swift */; };
-		1449FB2D228C663D00317584 /* SubscriptionDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB2B228C663D00317584 /* SubscriptionDetailsCollectionViewCell.xib */; };
-		1449FB32228C70FA00317584 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB30228C70FA00317584 /* ProductCollectionViewCell.swift */; };
-		1449FB33228C70FA00317584 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB31228C70FA00317584 /* ProductCollectionViewCell.xib */; };
-		1449FB37228D501B00317584 /* SubscriptionSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB36228D501B00317584 /* SubscriptionSelectorViewController.swift */; };
-		1449FB39228D503800317584 /* ProductsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB38228D503800317584 /* ProductsCollectionViewController.swift */; };
 		1449FB3C228D530C00317584 /* SubscriptionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB3B228D530C00317584 /* SubscriptionFlow.swift */; };
 		1449FB3E228D663000317584 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB3D228D663000317584 /* README.md */; };
 		1449FB43228D6BAA00317584 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB41228D6BAA00317584 /* CountryListViewController.swift */; };
 		1449FB44228D6BAA00317584 /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB42228D6BAA00317584 /* CountryListViewController.xib */; };
-		147208B8228C5D8D00C58031 /* SubscriptionSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147208B6228C5D8D00C58031 /* SubscriptionSelectorViewController.xib */; };
-		147208BA228C5F3100C58031 /* SubscriptionSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147208B9228C5F3100C58031 /* SubscriptionSelectorViewModel.swift */; };
-		147208BC228C621300C58031 /* SubscriptionGroupInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147208BB228C621300C58031 /* SubscriptionGroupInfoDataSource.swift */; };
+		14999F02228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EF9228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib */; };
+		14999F03228D97F700B56E03 /* SubscriptionSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */; };
+		14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */; };
+		14999F05228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFC228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift */; };
+		14999F06228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */; };
+		14999F07228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */; };
+		14999F08228D97F700B56E03 /* SubscriptionSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFF228D97F700B56E03 /* SubscriptionSelectorViewModel.swift */; };
+		14999F09228D97F700B56E03 /* SubscriptionSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999F00228D97F700B56E03 /* SubscriptionSelectorViewController.swift */; };
+		14999F0A228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999F01228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift */; };
 		14D07D2B228C13BA00522D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D2A228C13BA00522D51 /* AppDelegate.swift */; };
 		14D07D30228C13BA00522D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D07D2E228C13BA00522D51 /* Main.storyboard */; };
 		14D07D32228C13BA00522D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D07D31228C13BA00522D51 /* Assets.xcassets */; };
@@ -43,19 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1449FB2A228C663D00317584 /* SubscriptionDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
-		1449FB2B228C663D00317584 /* SubscriptionDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
-		1449FB30228C70FA00317584 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		1449FB31228C70FA00317584 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
-		1449FB36228D501B00317584 /* SubscriptionSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionSelectorViewController.swift; sourceTree = "<group>"; };
-		1449FB38228D503800317584 /* ProductsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewController.swift; sourceTree = "<group>"; };
 		1449FB3B228D530C00317584 /* SubscriptionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFlow.swift; sourceTree = "<group>"; };
 		1449FB3D228D663000317584 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1449FB41228D6BAA00317584 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		1449FB42228D6BAA00317584 /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
-		147208B6228C5D8D00C58031 /* SubscriptionSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionSelectorViewController.xib; sourceTree = "<group>"; };
-		147208B9228C5F3100C58031 /* SubscriptionSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSelectorViewModel.swift; sourceTree = "<group>"; };
-		147208BB228C621300C58031 /* SubscriptionGroupInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionGroupInfoDataSource.swift; sourceTree = "<group>"; };
+		14999EF9228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionGeneralInfoCollectionViewCell.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionGeneralInfoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionSelectorViewController.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionSelectorViewController.xib; sourceTree = SOURCE_ROOT; };
+		14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionPeriodsCollectionViewController.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodsCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		14999EFC228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionGeneralInfoCollectionViewCell.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionGeneralInfoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionPeriodCollectionViewCell.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionPeriodCollectionViewCell.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		14999EFF228D97F700B56E03 /* SubscriptionSelectorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionSelectorViewModel.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionSelectorViewModel.swift; sourceTree = SOURCE_ROOT; };
+		14999F00228D97F700B56E03 /* SubscriptionSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionSelectorViewController.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionSelectorViewController.swift; sourceTree = SOURCE_ROOT; };
+		14999F01228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionGeneralInfoColletionViewDataSource.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionGeneralInfoColletionViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		14D07D27228C13BA00522D51 /* SubSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D07D2A228C13BA00522D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D07D2F228C13BA00522D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,18 +93,18 @@
 		1449FB34228D47ED00317584 /* SubscriptionSelector */ = {
 			isa = PBXGroup;
 			children = (
-				1449FB38228D503800317584 /* ProductsCollectionViewController.swift */,
-				1449FB2A228C663D00317584 /* SubscriptionDetailsCollectionViewCell.swift */,
-				1449FB2B228C663D00317584 /* SubscriptionDetailsCollectionViewCell.xib */,
-				1449FB36228D501B00317584 /* SubscriptionSelectorViewController.swift */,
-				147208B6228C5D8D00C58031 /* SubscriptionSelectorViewController.xib */,
-				147208BB228C621300C58031 /* SubscriptionGroupInfoDataSource.swift */,
-				147208B9228C5F3100C58031 /* SubscriptionSelectorViewModel.swift */,
-				1449FB30228C70FA00317584 /* ProductCollectionViewCell.swift */,
-				1449FB31228C70FA00317584 /* ProductCollectionViewCell.xib */,
+				14999EFC228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift */,
+				14999EF9228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib */,
+				14999F01228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift */,
+				14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */,
+				14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */,
+				14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */,
+				14999F00228D97F700B56E03 /* SubscriptionSelectorViewController.swift */,
+				14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */,
+				14999EFF228D97F700B56E03 /* SubscriptionSelectorViewModel.swift */,
 			);
 			name = SubscriptionSelector;
-			path = ..;
+			path = ../SubscriptionSelector;
 			sourceTree = "<group>";
 		};
 		1449FB35228D48FB00317584 /* CountrySelector */ = {
@@ -257,12 +257,12 @@
 			files = (
 				14D07D35228C13BA00522D51 /* LaunchScreen.storyboard in Resources */,
 				14D07D50228C15A800522D51 /* CountryTableViewCell.xib in Resources */,
-				1449FB2D228C663D00317584 /* SubscriptionDetailsCollectionViewCell.xib in Resources */,
+				14999F02228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib in Resources */,
 				14D07D32228C13BA00522D51 /* Assets.xcassets in Resources */,
-				147208B8228C5D8D00C58031 /* SubscriptionSelectorViewController.xib in Resources */,
-				1449FB33228C70FA00317584 /* ProductCollectionViewCell.xib in Resources */,
+				14999F03228D97F700B56E03 /* SubscriptionSelectorViewController.xib in Resources */,
 				1449FB3E228D663000317584 /* README.md in Resources */,
 				1449FB44228D6BAA00317584 /* CountryListViewController.xib in Resources */,
+				14999F06228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib in Resources */,
 				14D07D30228C13BA00522D51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,19 +281,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14999F09228D97F700B56E03 /* SubscriptionSelectorViewController.swift in Sources */,
 				1449FB3C228D530C00317584 /* SubscriptionFlow.swift in Sources */,
-				1449FB32228C70FA00317584 /* ProductCollectionViewCell.swift in Sources */,
-				147208BA228C5F3100C58031 /* SubscriptionSelectorViewModel.swift in Sources */,
 				14D07D4C228C147400522D51 /* Theme.swift in Sources */,
-				147208BC228C621300C58031 /* SubscriptionGroupInfoDataSource.swift in Sources */,
-				1449FB39228D503800317584 /* ProductsCollectionViewController.swift in Sources */,
+				14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift in Sources */,
 				14D07D4F228C15A800522D51 /* CountryTableViewCell.swift in Sources */,
+				14999F08228D97F700B56E03 /* SubscriptionSelectorViewModel.swift in Sources */,
+				14999F0A228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift in Sources */,
+				14999F07228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift in Sources */,
 				14D07D52228C37F600522D51 /* CountryListViewModel.swift in Sources */,
-				1449FB2C228C663D00317584 /* SubscriptionDetailsCollectionViewCell.swift in Sources */,
 				14D07D83228C549A00522D51 /* CountryListTableViewDataSource.swift in Sources */,
 				14D07D2B228C13BA00522D51 /* AppDelegate.swift in Sources */,
 				1449FB43228D6BAA00317584 /* CountryListViewController.swift in Sources */,
-				1449FB37228D501B00317584 /* SubscriptionSelectorViewController.swift in Sources */,
+				14999F05228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

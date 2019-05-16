@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCollectionViewCell: UICollectionViewCell {
+class SubscriptionPeriodCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var summaryLabel: UILabel!
     override func awakeFromNib() {
