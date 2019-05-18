@@ -8,9 +8,7 @@
 
 import UIKit
 
-class CountryListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
-
-    // onCountrySelected - the first parameter is the controller itself, the second id of the country.
+class CountryListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, DataControllerDelegate {
     public var onCountrySelected: ((CountryListViewController, String) ->())?
     public var viewModel: CountryListViewModel?
     public var countryListTableViewDataSource: CountryListTableViewDataSource?
@@ -19,9 +17,9 @@ class CountryListViewController: UIViewController, UITableViewDelegate, UISearch
 
     fileprivate func setupViewModelAndDataSource() {
         if let viewModel = self.viewModel {
-            viewModel.onItemsChanged = {[weak self] () in self?.tableView.reloadData() }
-            self.countryListTableViewDataSource = CountryListTableViewDataSource(tableView: self.tableView, viewModel: viewModel)
-            self.countryListTableViewDataSource?.setup()
+            viewModel.data.delegate = self
+            self.countryListTableViewDataSource = CountryListTableViewDataSource(data: viewModel.data)
+            self.countryListTableViewDataSource?.attachTableView(tableView: tableView)
         }
     }
 
@@ -39,5 +37,9 @@ class CountryListViewController: UIViewController, UITableViewDelegate, UISearch
         if let viewModel = self.viewModel  {
             self.onCountrySelected?(self, viewModel.countryId(atIndex: indexPath.row))
         }
+    }
+
+    func dataControllerDidChangeContent<T>(_ dataController: DataController<T>) {
+        self.tableView.reloadData()
     }
 }

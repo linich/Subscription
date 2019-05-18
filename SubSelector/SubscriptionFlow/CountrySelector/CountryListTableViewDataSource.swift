@@ -10,30 +10,21 @@ import UIKit
 
 
 class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
-    private let viewModel: CountryListViewModel
-    private weak var tableView: UITableView?
+    private let data: DataController<SubscriptionViewModel>
 
-    init (tableView: UITableView, viewModel: CountryListViewModel) {
-        self.viewModel = viewModel
-        self.tableView = tableView
+    init (data: DataController<SubscriptionViewModel>) {
+        self.data = data
         super.init()
 
     }
 
-    public func setup(){
-        setupTableView()
-    }
-
-    fileprivate func setupTableView() {
-        guard let tableView = self.tableView else {
-            return
-        }
+    func attachTableView(tableView: UITableView) {
         tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "Suggestion")
         tableView.dataSource = self
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfItems
+        return data.numberOfItems(inSection: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,13 +32,72 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
             assert(false, "unknown item")
             return UITableViewCell()
         }
-        let viewModel = self.viewModel.itemAt(indexPath.row)
-        cell.countryName.textColor = Theme.appTextColor
-        cell.countryName.text = viewModel.localizedName
-        cell.flagImageView.image = viewModel.image
-        cell.productsNames.text = viewModel.features.map({ (feature) -> String in
-            feature.name
-        }).joined(separator: " ")
+
+        data.item(atIndexPath: indexPath.toDataSourceIndexPath()).setup(cell: cell)
         return cell
+    }
+}
+
+fileprivate extension SubscriptionViewModel.Feature {
+    fileprivate func setup(_ view: UIView) {
+        view.backgroundColor = backgroundColor
+        view.layer.cornerRadius = 3
+        view.layer.masksToBounds = true
+        guard let label = view.subviews.last as? UILabel else {
+            return
+        }
+
+        label.text = name
+        label.textColor = textColor
+        label.font = Theme.smallFont
+        view.sizeToFit()
+    }
+}
+
+fileprivate extension SubscriptionViewModel {
+
+    fileprivate func setupProducts(_ stackView: UIStackView) {
+        stackView.spacing = Theme.itemSpacing
+
+        while let last = stackView.arrangedSubviews.last {
+            stackView.removeArrangedSubview(last)
+            last.removeFromSuperview()
+        }
+
+        for feature in features {
+            let view = UIView()
+            let label = UILabel()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            label.translatesAutoresizingMaskIntoConstraints = false
+
+            view.addSubview(label)
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4).isActive = true
+            label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 4).isActive = true
+            label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -4).isActive = true
+            feature.setup(view)
+            stackView.addArrangedSubview(view)
+        }
+        let spacerView = UIView()
+        spacerView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        stackView.addArrangedSubview(spacerView)
+    }
+
+    func setup(cell: CountryTableViewCell) {
+        //Country name
+        cell.countryName.textColor = Theme.appTextColor
+        cell.countryName.text = localizedName
+        cell.countryName.font = Theme.standartFont
+
+        // Flag
+        cell.flagImageView.image = image
+        cell.flagImageView.layer.cornerRadius = 3
+        cell.flagImageView.layer.masksToBounds = true
+        cell.flagImageView.layer.shouldRasterize = true
+        cell.flagImageView.layer.borderWidth = 0.5
+        cell.flagImageView.layer.borderColor = UIColor(white: 0xF7/CGFloat(0xff), alpha: 1).cgColor
+
+        // Products
+        setupProducts(cell.productsStackView)
     }
 }

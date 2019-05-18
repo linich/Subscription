@@ -13,4 +13,8 @@ class Theme {
     static let appTextColor = UIColor.black
     static let selectedTextColor = UIColor.white
     static let backgroundColor = UIColor.white
+    static let itemSpacing = CGFloat(6)
+
+    static let smallFont = UIFont.boldSystemFont(ofSize: UIFont.smallSystemFontSize)
+    static let standartFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
 }

@@ -13,6 +13,7 @@ struct SubscriptionViewModel {
     struct Feature {
         let name: String
         let backgroundColor: UIColor
+        let textColor: UIColor
     }
     let localizedName: String
     let image: UIImage
@@ -20,34 +21,37 @@ struct SubscriptionViewModel {
 }
 
 class CountryListViewModel {
+    public let data: DataController<SubscriptionViewModel>
     private let subscriptionList: [SubscriptionViewModel]
     private var filteredSubscriptionList: [SubscriptionViewModel]?
-    public var onItemsChanged:  (()->())?
     init() {
+
+        let smsColor = UIColor(red: 0x90/CGFloat(0xff), green: 0xCA/CGFloat(0xff), blue: 0xDD/CGFloat(0xff), alpha: 1)
+        let callColor = UIColor(red: 0x69/CGFloat(0xff), green: 0xCF/CGFloat(0xA8), blue: 0xB5/CGFloat(0xff), alpha: 1)
         subscriptionList = [
             SubscriptionViewModel(
                 localizedName: "United State",
                 image: #imageLiteral(resourceName: "Add"),
-                features: [SubscriptionViewModel.Feature(name:"CALLS",backgroundColor: UIColor.black ),
-                           SubscriptionViewModel.Feature(name:"SMS",backgroundColor: UIColor.green )]),
+                features: [SubscriptionViewModel.Feature(name:"CALLS", backgroundColor: callColor, textColor: UIColor.white ),
+                           SubscriptionViewModel.Feature(name:"SMS",backgroundColor: smsColor, textColor: UIColor.white)]),
             SubscriptionViewModel(
                 localizedName: "Belarus",
                 image: #imageLiteral(resourceName: "Belarus"),
-                features: [SubscriptionViewModel.Feature(name:"SMS",backgroundColor: UIColor.green )]),
+                features: [SubscriptionViewModel.Feature(name:"SMS",backgroundColor: smsColor, textColor: UIColor.white)]),
             SubscriptionViewModel(
                 localizedName: "Finland",
                 image: #imageLiteral(resourceName: "Finland"),
-                features: [SubscriptionViewModel.Feature(name:"SMS",backgroundColor: UIColor.green )]),
+                features: [SubscriptionViewModel.Feature(name:"SMS",backgroundColor: smsColor, textColor: UIColor.white )]),
             SubscriptionViewModel(
                 localizedName: "Belgium",
                 image: #imageLiteral(resourceName: "Belgium"),
                 features: [
-                    SubscriptionViewModel.Feature(name:"CALLS",backgroundColor: UIColor.black ),
-                    SubscriptionViewModel.Feature(name:"SMS",backgroundColor: UIColor.black )])
+                    SubscriptionViewModel.Feature(name:"CALLS",backgroundColor: callColor, textColor: UIColor.white ),
+                    SubscriptionViewModel.Feature(name:"SMS",backgroundColor: smsColor, textColor: UIColor.white )])
             ].sorted(by: { (a, b) -> Bool in
                 a.localizedName > a.localizedName
             })
-        filteredSubscriptionList = nil
+        data = DataController(items: [subscriptionList])
     }
 
     var numberOfItems: Int {
@@ -69,22 +73,17 @@ class CountryListViewModel {
     }
 
     public func filterItems(filter: String?) {
-        defer{
-            if let onItemsChanged = onItemsChanged {
-                onItemsChanged()
-            }
-        }
-
         guard let filter = filter else {
             filteredSubscriptionList = nil
             return
         }
-        if filter.count > 0 {
-            filteredSubscriptionList = subscriptionList.filter({ (viewModel) -> Bool in
-                viewModel.localizedName.lowercased().contains(filter.lowercased())
-            })
-        } else {
-            filteredSubscriptionList = nil
+
+        let filterBlock: (SubscriptionViewModel) -> Bool = { (viewModel) -> Bool in
+            viewModel.localizedName.lowercased().contains(filter.lowercased())
         }
+        
+        let items =  filter.count > 0 ? [subscriptionList.filter(filterBlock)] : [subscriptionList]
+        self.data.set(items: items)
     }
 }
+

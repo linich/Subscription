@@ -9,17 +9,19 @@
 import UIKit
 
 // Subscription Flow is responsible for how the subscription purchase process will occur.
+
 class SubscriptionFlow {
     public var onActivateCompleted:  (()->())?
     private weak var rootController: UINavigationController?
     init(rootController: UINavigationController) {
         self.rootController = rootController
+        rootController.navigationBar.hideBottomShadow()
     }
 
     public func start() {
         let countrySelectorViewController = CountryListViewController()
         countrySelectorViewController.viewModel = CountryListViewModel()
-        countrySelectorViewController.title = "Choose a Country"
+        countrySelectorViewController.title = "Select a Country"
         countrySelectorViewController.onCountrySelected = { [weak self] (controller: CountryListViewController, countryId: String) in
             self?.onCountrySelected(controller,countryId: countryId)
         }
@@ -36,15 +38,15 @@ class SubscriptionFlow {
         }
 
         subscriptionSelectorViewController.title = viewModel.phoneNumber
-        let backItem = UIBarButtonItem()
-        backItem.title = "Search"
-        controller.navigationItem.backBarButtonItem = backItem
 
-        controller.navigationController?.pushViewController(subscriptionSelectorViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController:subscriptionSelectorViewController)
+        navigationController.navigationBar.hideBottomShadow()
+
+        controller.present(navigationController, animated: true, completion: nil)
     }
 
     private func onActivate(_ controller: SubscriptionSelectorViewController) {
-        controller.navigationController?.popViewController(animated: true)
+        controller.dismiss(animated: true, completion: nil)
         self.onActivateCompleted?()
     }
 }
