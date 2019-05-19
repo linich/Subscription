@@ -8,10 +8,8 @@
 
 import UIKit
 
-// SubscriptionSelectorViewController displays general subscription information and its possible periods. Allows
-// activate subscription for a specific period.
 
-class SubscriptionSelectorViewController: UIViewController {
+class SubscriptionSelectorViewController: UIViewController, SubscriptionSelectorViewModelDelegate, UICollectionViewDelegate, DataControllerDelegate {
 
     public var onActivateCompleted:  ((SubscriptionSelectorViewController)->())?
     public var viewModel : SubscriptionSelectorViewModel?
@@ -19,7 +17,7 @@ class SubscriptionSelectorViewController: UIViewController {
     @IBOutlet weak var subscriptionPeriodsCollectionView: UICollectionView!
 
     private var subscriptionGeneralInfoCollectionViewDataSource: SubscriptionGeneralInfoColletionViewDataSource?
-    private var subscribtionPeriodsCollectionViewController: SubscriptionPeriodsCollectionViewController?
+    private var subscriptionPeriodsCollectionViewDataSource: SubscriptionPeriodsCollectionViewDataSource?
 
     @IBAction func onActivateTouch(_ sender: UIButton) {
         self.viewModel?.activate(completion: {[weak self]() in
@@ -34,18 +32,32 @@ class SubscriptionSelectorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupDataSources()
     }
 
     fileprivate func setupDataSources() {
         if let viewModel = self.viewModel {
             self.subscriptionGeneralInfoCollectionViewDataSource = SubscriptionGeneralInfoColletionViewDataSource(collectionView: self.subscriptionGeneralInfosCollectionView, viewModel: viewModel)
-            self.subscribtionPeriodsCollectionViewController = SubscriptionPeriodsCollectionViewController(collectionView: self.subscriptionPeriodsCollectionView, viewModel: viewModel)
+            self.subscriptionPeriodsCollectionViewDataSource = SubscriptionPeriodsCollectionViewDataSource(subscriptions: viewModel.subscriptions)
+            viewModel.subscriptions.delegate = self
 
             self.subscriptionGeneralInfoCollectionViewDataSource?.setup()
-            self.subscribtionPeriodsCollectionViewController?.startLifecycle()
+            self.subscriptionPeriodsCollectionViewDataSource?.attach(toCollectionView: self.subscriptionPeriodsCollectionView)
         }
     }
 
+    // View Model Delegates
+    func subscriptionSelectorViewModel(selectionChanged: SubscriptionSelectorViewModel) {
+        self.subscriptionPeriodsCollectionView.reloadData()
+    }
+
+    // CollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.viewModel?.selectSubscription(atIndex: indexPath.item)
+    }
+
+    // DataControllerDelegate
+    func dataControllerDidChangeContent<T>(_ dataController: DataController<T>) {
+        self.subscriptionPeriodsCollectionView.reloadData()
+    }
 }

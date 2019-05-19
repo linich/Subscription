@@ -13,9 +13,10 @@
 		1449FB44228D6BAA00317584 /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB42228D6BAA00317584 /* CountryListViewController.xib */; };
 		145C3BF2229017A9007B3F8D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3BF1229017A9007B3F8D /* DataController.swift */; };
 		145C3C0822904074007B3F8D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3C0722904073007B3F8D /* UINavigationBar.swift */; };
+		145C3C0A2291D6D2007B3F8D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3C092291D6D2007B3F8D /* UIView.swift */; };
 		14999F02228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EF9228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib */; };
 		14999F03228D97F700B56E03 /* SubscriptionSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */; };
-		14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */; };
+		14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewDataSource.swift */; };
 		14999F05228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFC228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift */; };
 		14999F06228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */; };
 		14999F07228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */; };
@@ -51,9 +52,10 @@
 		1449FB42228D6BAA00317584 /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
 		145C3BF1229017A9007B3F8D /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		145C3C0722904073007B3F8D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		145C3C092291D6D2007B3F8D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		14999EF9228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionGeneralInfoCollectionViewCell.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionGeneralInfoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionSelectorViewController.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionSelectorViewController.xib; sourceTree = SOURCE_ROOT; };
-		14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionPeriodsCollectionViewController.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodsCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionPeriodsCollectionViewDataSource.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodsCollectionViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		14999EFC228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionGeneralInfoCollectionViewCell.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionGeneralInfoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionPeriodCollectionViewCell.xib; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionPeriodCollectionViewCell.swift; path = SubSelector/SubscriptionFlow/SubscriptionSelector/SubscriptionPeriodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -102,7 +104,7 @@
 				14999F01228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift */,
 				14999EFE228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift */,
 				14999EFD228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib */,
-				14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift */,
+				14999EFB228D97F700B56E03 /* SubscriptionPeriodsCollectionViewDataSource.swift */,
 				14999F00228D97F700B56E03 /* SubscriptionSelectorViewController.swift */,
 				14999EFA228D97F700B56E03 /* SubscriptionSelectorViewController.xib */,
 				14999EFF228D97F700B56E03 /* SubscriptionSelectorViewModel.swift */,
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				145C3C0722904073007B3F8D /* UINavigationBar.swift */,
+				145C3C092291D6D2007B3F8D /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,11 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145C3C0A2291D6D2007B3F8D /* UIView.swift in Sources */,
 				14999F09228D97F700B56E03 /* SubscriptionSelectorViewController.swift in Sources */,
 				1449FB3C228D530C00317584 /* SubscriptionFlow.swift in Sources */,
 				145C3BF2229017A9007B3F8D /* DataController.swift in Sources */,
 				14D07D4C228C147400522D51 /* Theme.swift in Sources */,
-				14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewController.swift in Sources */,
+				14999F04228D97F700B56E03 /* SubscriptionPeriodsCollectionViewDataSource.swift in Sources */,
 				14D07D4F228C15A800522D51 /* CountryTableViewCell.swift in Sources */,
 				14999F08228D97F700B56E03 /* SubscriptionSelectorViewModel.swift in Sources */,
 				14999F0A228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift in Sources */,

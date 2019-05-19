@@ -39,7 +39,7 @@ class CountryListViewController: UIViewController, UITableViewDelegate, UISearch
         }
     }
 
-    func dataControllerDidChangeContent<T>(_ dataController: DataController<T>) {
+    func dataControllerDidChangeContent<SubscriptionViewModel>(_ dataController: DataController<SubscriptionViewModel>) {
         self.tableView.reloadData()
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+let countryCellId = "borderColor"
 class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
     private let data: DataController<SubscriptionViewModel>
 
@@ -19,7 +19,7 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func attachTableView(tableView: UITableView) {
-        tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "Suggestion")
+        tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: countryCellId)
         tableView.dataSource = self
     }
 
@@ -28,7 +28,7 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Suggestion", for: indexPath) as? CountryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: countryCellId, for: indexPath) as? CountryTableViewCell else {
             assert(false, "unknown item")
             return UITableViewCell()
         }
@@ -41,8 +41,7 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
 fileprivate extension SubscriptionViewModel.Feature {
     fileprivate func setup(_ view: UIView) {
         view.backgroundColor = backgroundColor
-        view.layer.cornerRadius = 3
-        view.layer.masksToBounds = true
+        view.set(cornerRadius: Theme.cornerRadius)
         guard let label = view.subviews.last as? UILabel else {
             return
         }
@@ -91,11 +90,9 @@ fileprivate extension SubscriptionViewModel {
 
         // Flag
         cell.flagImageView.image = image
-        cell.flagImageView.layer.cornerRadius = 3
-        cell.flagImageView.layer.masksToBounds = true
-        cell.flagImageView.layer.shouldRasterize = true
-        cell.flagImageView.layer.borderWidth = 0.5
-        cell.flagImageView.layer.borderColor = UIColor(white: 0xF7/CGFloat(0xff), alpha: 1).cgColor
+        cell.flagImageView.set(cornerRadius: Theme.cornerRadius)
+        cell.flagImageView.layer.borderWidth = Theme.borderWidth
+        cell.flagImageView.layer.borderColor = Theme.borderColor.cgColor
 
         // Products
         setupProducts(cell.productsStackView)

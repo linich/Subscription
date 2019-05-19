@@ -17,4 +17,8 @@ class Theme {
 
     static let smallFont = UIFont.boldSystemFont(ofSize: UIFont.smallSystemFontSize)
     static let standartFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+
+    static let cornerRadius = CGFloat(3)
+    static let borderWidth = CGFloat(0.5)
+    static let borderColor = UIColor(white: 0xF7/CGFloat(0xff), alpha: 1)
 }
