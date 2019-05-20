@@ -20,6 +20,6 @@ protocol ICountryInfo {
     var availableProducts: [IProductInfo] { get }
 }
 
-protocol IProductListService {
+protocol IProductService {
     func loadCountries(completion: (([ICountryInfo]) -> Void))
 }

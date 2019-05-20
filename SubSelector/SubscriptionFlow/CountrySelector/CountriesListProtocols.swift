@@ -8,19 +8,19 @@
 
 import UIKit
 
-struct SubscriptionViewModel {
-    struct Feature {
+struct CountryInfo {
+    struct Product {
         let name: String
         let backgroundColor: UIColor
         let textColor: UIColor
     }
-    let localizedName: String
+    let name: String
     let image: UIImage?
-    let features: [Feature]
+    let availableProducts: [Product]
 }
 
-protocol ICountryListViewModel {
-    var data: DataController<SubscriptionViewModel> { get }
+protocol ICountriesListViewModel {
+    var data: DataController<CountryInfo> { get }
 
     func loadData()
     func filterItems(filter: String?)

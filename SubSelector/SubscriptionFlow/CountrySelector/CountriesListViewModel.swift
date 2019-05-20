@@ -1,20 +1,19 @@
 //
-//  CountryListViewModel.swift
+//  CountriesListViewModel.swift
 //  SubSelector
 //
 //  Created by Maxim Linich on 5/15/19.
 //  Copyright © 2019 Maxim Linich. All rights reserved.
 //
 
-import Foundation
-import StoreKit
+import UIKit
 
-class CountriesListViewModel: ICountryListViewModel {
-    public let data: DataController<SubscriptionViewModel>
+class CountriesListViewModel: ICountriesListViewModel {
+    public let data: DataController<CountryInfo>
 
-    private let productService: IProductListService
+    private let productService: IProductService
 
-    private var countriesList: [SubscriptionViewModel]{
+    private var countriesList: [CountryInfo]{
         didSet {
             self.updateSections()
         }
@@ -29,13 +28,13 @@ class CountriesListViewModel: ICountryListViewModel {
         }
     }
 
-    init(productService: IProductListService) {
+    init(productService: IProductService) {
         self.productService = productService
         self.data = DataController(sections: [])
         self.countriesList = []
     }
 
-    public func loadData(){
+    func loadData(){
         self.productService.loadCountries { [weak self](countries) in
             self?.loadCountriesCompleleted(countries: countries)
         }
@@ -45,33 +44,34 @@ class CountriesListViewModel: ICountryListViewModel {
         return "country_id"
     }
 
+    func filterItems(filter: String?) {
+        self.filter = filter
+    }
+
     fileprivate func loadCountriesCompleleted(countries: [ICountryInfo]) {
-        let models = countries.map { (countryInfo) -> SubscriptionViewModel in
-            let features = countryInfo.availableProducts.map({ (product) -> SubscriptionViewModel.Feature in
-                return SubscriptionViewModel.Feature(name: product.name.uppercased(),
+        let models = countries.map { (countryInfo) -> CountryInfo in
+            let features = countryInfo.availableProducts.map({ (product) -> CountryInfo.Product in
+                return CountryInfo.Product(name: product.name.uppercased(),
                                                      backgroundColor: product.color,
                                                      textColor: UIColor.white)
             })
-            return SubscriptionViewModel(localizedName: countryInfo.name, image: UIImage(named: countryInfo.id), features: features)
+            return CountryInfo(name: countryInfo.name, image: UIImage(named: countryInfo.id), availableProducts: features)
         }
         self.countriesList = models
     }
 
-    public func filterItems(filter: String?) {
-        self.filter = filter
-    }
-
     fileprivate func updateSections() {
-        guard let filter = self.filter else {
+        guard let filter = self.filter,
+                filter.count > 0 else {
             self.data.set(sections: [self.countriesList])
             return
         }
 
-        let filterBlock: (SubscriptionViewModel) -> Bool = { (viewModel) -> Bool in
-            viewModel.localizedName.lowercased().contains(filter.lowercased())
+        let filterBlock: (CountryInfo) -> Bool = { (viewModel) -> Bool in
+            viewModel.name.lowercased().contains(filter.lowercased())
         }
 
-        let items =  filter.count > 0 ? [countriesList.filter(filterBlock)] : [countriesList]
+        let items = [countriesList.filter(filterBlock)]
 
         self.data.set(sections: items)
     }

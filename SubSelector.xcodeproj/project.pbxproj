@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1402518C2292942800D50DD8 /* IProductListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402518B2292942800D50DD8 /* IProductListService.swift */; };
+		1402518C2292942800D50DD8 /* IProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402518B2292942800D50DD8 /* IProductService.swift */; };
 		140251912292984500D50DD8 /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251902292984500D50DD8 /* ProductServiceMock.swift */; };
 		140251932292A50000D50DD8 /* CountriesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251922292A50000D50DD8 /* CountriesListProtocols.swift */; };
 		140251952292A7A900D50DD8 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251942292A7A900D50DD8 /* CountriesListViewModel.swift */; };
@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1402518B2292942800D50DD8 /* IProductListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProductListService.swift; sourceTree = "<group>"; };
+		1402518B2292942800D50DD8 /* IProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProductService.swift; sourceTree = "<group>"; };
 		140251902292984500D50DD8 /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
 		140251922292A50000D50DD8 /* CountriesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListProtocols.swift; sourceTree = "<group>"; };
 		140251942292A7A900D50DD8 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		1402518A2292940800D50DD8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1402518B2292942800D50DD8 /* IProductListService.swift */,
+				1402518B2292942800D50DD8 /* IProductService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				140251932292A50000D50DD8 /* CountriesListProtocols.swift in Sources */,
 				14D07D83228C549A00522D51 /* CountriesListTableViewDataSource.swift in Sources */,
 				140251952292A7A900D50DD8 /* CountriesListViewModel.swift in Sources */,
-				1402518C2292942800D50DD8 /* IProductListService.swift in Sources */,
+				1402518C2292942800D50DD8 /* IProductService.swift in Sources */,
 				140251912292984500D50DD8 /* ProductServiceMock.swift in Sources */,
 				145C3C0822904074007B3F8D /* UINavigationBar.swift in Sources */,
 				14D07D2B228C13BA00522D51 /* AppDelegate.swift in Sources */,

@@ -8,17 +8,17 @@
 
 import UIKit
 
-let countryCellId = "borderColor"
+let countryCellId = "CountryCell"
 class CountriesListTableViewDataSource: NSObject, UITableViewDataSource {
-    private let data: DataController<SubscriptionViewModel>
+    private let data: DataController<CountryInfo>
 
-    init (data: DataController<SubscriptionViewModel>) {
+    init (data: DataController<CountryInfo>) {
         self.data = data
         super.init()
 
     }
 
-    func attachTableView(tableView: UITableView) {
+    func attach(toTableView tableView: UITableView) {
         tableView.register(UINib(nibName: "CountryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: countryCellId)
         tableView.dataSource = self
     }
@@ -42,7 +42,7 @@ class CountriesListTableViewDataSource: NSObject, UITableViewDataSource {
     }
 }
 
-fileprivate extension SubscriptionViewModel.Feature {
+fileprivate extension CountryInfo.Product {
     fileprivate func setup(_ view: UIView) {
         view.backgroundColor = backgroundColor
         view.set(cornerRadius: Theme.cornerRadius)
@@ -57,7 +57,7 @@ fileprivate extension SubscriptionViewModel.Feature {
     }
 }
 
-fileprivate extension SubscriptionViewModel {
+fileprivate extension CountryInfo {
 
     fileprivate func setupProducts(_ stackView: UIStackView) {
         stackView.spacing = Theme.itemSpacing
@@ -67,7 +67,7 @@ fileprivate extension SubscriptionViewModel {
             last.removeFromSuperview()
         }
 
-        for feature in features {
+        for feature in availableProducts {
             let view = UIView()
             let label = UILabel()
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,7 @@ fileprivate extension SubscriptionViewModel {
     func setup(cell: CountryTableViewCell) {
         //Country name
         cell.countryName.textColor = Theme.appTextColor
-        cell.countryName.text = localizedName
+        cell.countryName.text = name
         cell.countryName.font = Theme.standartFont
 
         // Flag

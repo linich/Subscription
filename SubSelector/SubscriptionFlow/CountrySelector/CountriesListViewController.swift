@@ -14,7 +14,7 @@ protocol CountryListViewControllerDelegate: NSObjectProtocol {
 
 class CountriesListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, DataControllerDelegate {
     public var onCountrySelected: ((CountriesListViewController, String) ->())?
-    public var viewModel: ICountryListViewModel?
+    public var viewModel: ICountriesListViewModel?
     public var countryListTableViewDataSource: CountriesListTableViewDataSource?
     public weak var delegate: CountryListViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +24,7 @@ class CountriesListViewController: UIViewController, UITableViewDelegate, UISear
             viewModel.data.delegate = self
             viewModel.loadData()
             self.countryListTableViewDataSource = CountriesListTableViewDataSource(data: viewModel.data)
-            self.countryListTableViewDataSource?.attachTableView(tableView: tableView)
+            self.countryListTableViewDataSource?.attach(toTableView: tableView)
         }
     }
 

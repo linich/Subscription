@@ -9,18 +9,10 @@
 import UIKit
 
 
+let SubscriptionPeriodCellId = "SubscriptionPeriod"
 class SubscriptionPeriodsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let subscriptions: DataController<SubscriptionPeriod>
-    enum CellIds : CustomStringConvertible {
-        case SubscriptionPeriod
-        var description : String {
-            switch self {
-            case .SubscriptionPeriod: return "SubscriptionPeriod"
-            }
-        }
-    }
-
     init (subscriptions: DataController<SubscriptionPeriod>) {
         self.subscriptions = subscriptions
         super.init()
@@ -29,7 +21,7 @@ class SubscriptionPeriodsCollectionViewDataSource: NSObject, UICollectionViewDat
 
     func attach(toCollectionView collectionView: UICollectionView) {
         collectionView.register(UINib(nibName: "SubscriptionPeriodCollectionViewCell", bundle: Bundle.main), 
-                forCellWithReuseIdentifier: String(describing: CellIds.SubscriptionPeriod))
+                forCellWithReuseIdentifier: String(describing: SubscriptionPeriodCellId))
         collectionView.dataSource = self
     }
 
@@ -40,7 +32,7 @@ class SubscriptionPeriodsCollectionViewDataSource: NSObject, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing:CellIds.SubscriptionPeriod), for: indexPath) as? SubscriptionPeriodCollectionViewCell  else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubscriptionPeriodCellId, for: indexPath) as? SubscriptionPeriodCollectionViewCell  else {
             return UICollectionViewCell()
         }
         let data = subscriptions.item(atIndexPath: indexPath)

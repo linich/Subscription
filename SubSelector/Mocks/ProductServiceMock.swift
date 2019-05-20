@@ -8,19 +8,19 @@
 
 import UIKit
 
-fileprivate struct CountryInfo: ICountryInfo {
-    let id: String
-    let name: String
-    let availableProducts: [IProductInfo]
-}
+class ProductServiceMock: IProductService {
+    fileprivate struct CountryInfo: ICountryInfo {
+        let id: String
+        let name: String
+        let availableProducts: [IProductInfo]
+    }
 
-fileprivate struct ProductInfo: IProductInfo {
-    let id: String
-    let name: String
-    let color: UIColor 
-}
+    fileprivate struct ProductInfo: IProductInfo {
+        let id: String
+        let name: String
+        let color: UIColor
+    }
 
-class ProductServiceMock: IProductListService {
     public func loadCountries(completion: (([ICountryInfo]) -> Void)) {
         let smsColor = UIColor(red: 0x90/CGFloat(0xff), green: 0xCA/CGFloat(0xff), blue: 0xDD/CGFloat(0xff), alpha: 1)
         let callColor = UIColor(red: 0x69/CGFloat(0xff), green: 0xCF/CGFloat(0xA8), blue: 0xB5/CGFloat(0xff), alpha: 1)
