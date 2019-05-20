@@ -10,25 +10,24 @@ import UIKit
 
 // Subscription Flow is responsible for how the subscription purchase process will occur.
 
-class SubscriptionFlow {
+class SubscriptionFlow: NSObject, CountryListViewControllerDelegate {
     public var onActivateCompleted:  (()->())?
     private weak var rootController: UINavigationController?
+
     init(rootController: UINavigationController) {
         self.rootController = rootController
         rootController.navigationBar.hideBottomShadow()
     }
 
     public func start() {
-        let countrySelectorViewController = CountryListViewController()
-        countrySelectorViewController.viewModel = CountryListViewModel()
+        let countrySelectorViewController = CountriesListViewController()
+        countrySelectorViewController.viewModel = CountriesListViewModel(productService: ProductServiceMock())
         countrySelectorViewController.title = "Select a Country"
-        countrySelectorViewController.onCountrySelected = { [weak self] (controller: CountryListViewController, countryId: String) in
-            self?.onCountrySelected(controller,countryId: countryId)
-        }
+        countrySelectorViewController.delegate = self
         self.rootController?.pushViewController(countrySelectorViewController, animated: true)
     }
 
-    private func onCountrySelected(_ controller: CountryListViewController, countryId: String) {
+    func countryListViewController(countryListViewController controller: CountriesListViewController, didSelectCountryWithId countryId: String) {
         let subscriptionSelectorViewController = SubscriptionSelectorViewController()
         let viewModel = SubscriptionSelectorViewModel(countryId)
 
@@ -43,6 +42,10 @@ class SubscriptionFlow {
         navigationController.navigationBar.hideBottomShadow()
 
         controller.present(navigationController, animated: true, completion: nil)
+    }
+
+    private func onCountrySelected(_ controller: CountriesListViewController, countryId: String) {
+
     }
 
     private func onActivate(_ controller: SubscriptionSelectorViewController) {

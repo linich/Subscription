@@ -42,7 +42,7 @@ class SubscriptionSelectorViewModel {
         subscriptionGeneralInfoList = [
         SubscriptionGeneralInfo(image: #imageLiteral(resourceName: "Belarus"), text: "Something about Belarus"),
         SubscriptionGeneralInfo(image: #imageLiteral(resourceName: "Belgium"), text: "Something about Belgium")]
-        subscriptions = DataController(items: [subscriptionPeriodList])
+        subscriptions = DataController(sections: [subscriptionPeriodList])
     }
 
     public func activate(completion: (()->())?){
@@ -50,7 +50,7 @@ class SubscriptionSelectorViewModel {
     }
 
     public func selectSubscription(atIndex index: Int){
-        subscriptions.set(items: [subscriptionPeriodList.enumerated().map({ (itemIndex, info) -> SubscriptionPeriod in
+        subscriptions.set(sections: [subscriptionPeriodList.enumerated().map({ (itemIndex, info) -> SubscriptionPeriod in
             return SubscriptionPeriod(attributedText: info.attributedText, selected: itemIndex == index)
         })])
     }

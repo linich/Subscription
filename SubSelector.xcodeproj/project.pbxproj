@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1402518C2292942800D50DD8 /* IProductListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402518B2292942800D50DD8 /* IProductListService.swift */; };
+		140251912292984500D50DD8 /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251902292984500D50DD8 /* ProductServiceMock.swift */; };
+		140251932292A50000D50DD8 /* CountriesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251922292A50000D50DD8 /* CountriesListProtocols.swift */; };
+		140251952292A7A900D50DD8 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140251942292A7A900D50DD8 /* CountriesListViewModel.swift */; };
 		1449FB3C228D530C00317584 /* SubscriptionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB3B228D530C00317584 /* SubscriptionFlow.swift */; };
 		1449FB3E228D663000317584 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB3D228D663000317584 /* README.md */; };
-		1449FB43228D6BAA00317584 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB41228D6BAA00317584 /* CountryListViewController.swift */; };
-		1449FB44228D6BAA00317584 /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB42228D6BAA00317584 /* CountryListViewController.xib */; };
+		1449FB43228D6BAA00317584 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FB41228D6BAA00317584 /* CountriesListViewController.swift */; };
+		1449FB44228D6BAA00317584 /* CountriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1449FB42228D6BAA00317584 /* CountriesListViewController.xib */; };
 		145C3BF2229017A9007B3F8D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3BF1229017A9007B3F8D /* DataController.swift */; };
 		145C3C0822904074007B3F8D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3C0722904073007B3F8D /* UINavigationBar.swift */; };
 		145C3C0A2291D6D2007B3F8D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C3C092291D6D2007B3F8D /* UIView.swift */; };
@@ -31,8 +35,7 @@
 		14D07D4C228C147400522D51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D4B228C147400522D51 /* Theme.swift */; };
 		14D07D4F228C15A800522D51 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D4D228C15A800522D51 /* CountryTableViewCell.swift */; };
 		14D07D50228C15A800522D51 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D07D4E228C15A800522D51 /* CountryTableViewCell.xib */; };
-		14D07D52228C37F600522D51 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D51228C37F600522D51 /* CountryListViewModel.swift */; };
-		14D07D83228C549A00522D51 /* CountryListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D82228C549A00522D51 /* CountryListTableViewDataSource.swift */; };
+		14D07D83228C549A00522D51 /* CountriesListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D07D82228C549A00522D51 /* CountriesListTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1402518B2292942800D50DD8 /* IProductListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProductListService.swift; sourceTree = "<group>"; };
+		140251902292984500D50DD8 /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
+		140251922292A50000D50DD8 /* CountriesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListProtocols.swift; sourceTree = "<group>"; };
+		140251942292A7A900D50DD8 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		1449FB3B228D530C00317584 /* SubscriptionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFlow.swift; sourceTree = "<group>"; };
 		1449FB3D228D663000317584 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1449FB41228D6BAA00317584 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
-		1449FB42228D6BAA00317584 /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
+		1449FB41228D6BAA00317584 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		1449FB42228D6BAA00317584 /* CountriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesListViewController.xib; sourceTree = "<group>"; };
 		145C3BF1229017A9007B3F8D /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		145C3C0722904073007B3F8D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		145C3C092291D6D2007B3F8D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -74,8 +81,7 @@
 		14D07D4B228C147400522D51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		14D07D4D228C15A800522D51 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		14D07D4E228C15A800522D51 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
-		14D07D51228C37F600522D51 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
-		14D07D82228C549A00522D51 /* CountryListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewDataSource.swift; sourceTree = "<group>"; };
+		14D07D82228C549A00522D51 /* CountriesListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1402518A2292940800D50DD8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1402518B2292942800D50DD8 /* IProductListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1402518D2292954E00D50DD8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				140251902292984500D50DD8 /* ProductServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		1449FB34228D47ED00317584 /* SubscriptionSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,12 +137,13 @@
 		1449FB35228D48FB00317584 /* CountrySelector */ = {
 			isa = PBXGroup;
 			children = (
-				1449FB41228D6BAA00317584 /* CountryListViewController.swift */,
-				1449FB42228D6BAA00317584 /* CountryListViewController.xib */,
-				14D07D82228C549A00522D51 /* CountryListTableViewDataSource.swift */,
-				14D07D51228C37F600522D51 /* CountryListViewModel.swift */,
+				140251942292A7A900D50DD8 /* CountriesListViewModel.swift */,
+				1449FB41228D6BAA00317584 /* CountriesListViewController.swift */,
+				1449FB42228D6BAA00317584 /* CountriesListViewController.xib */,
+				14D07D82228C549A00522D51 /* CountriesListTableViewDataSource.swift */,
 				14D07D4D228C15A800522D51 /* CountryTableViewCell.swift */,
 				14D07D4E228C15A800522D51 /* CountryTableViewCell.xib */,
+				140251922292A50000D50DD8 /* CountriesListProtocols.swift */,
 			);
 			path = CountrySelector;
 			sourceTree = "<group>";
@@ -174,6 +197,8 @@
 		14D07D29228C13BA00522D51 /* SubSelector */ = {
 			isa = PBXGroup;
 			children = (
+				1402518D2292954E00D50DD8 /* Mocks */,
+				1402518A2292940800D50DD8 /* Services */,
 				145C3C0622904056007B3F8D /* Extensions */,
 				145C3BEE229001C8007B3F8D /* DataSources */,
 				1449FB3A228D52EE00317584 /* SubscriptionFlow */,
@@ -241,7 +266,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Maxim Linich";
 				TargetAttributes = {
 					14D07D26228C13BA00522D51 = {
@@ -285,7 +310,7 @@
 				14D07D32228C13BA00522D51 /* Assets.xcassets in Resources */,
 				14999F03228D97F700B56E03 /* SubscriptionSelectorViewController.xib in Resources */,
 				1449FB3E228D663000317584 /* README.md in Resources */,
-				1449FB44228D6BAA00317584 /* CountryListViewController.xib in Resources */,
+				1449FB44228D6BAA00317584 /* CountriesListViewController.xib in Resources */,
 				14999F06228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.xib in Resources */,
 				14D07D30228C13BA00522D51 /* Main.storyboard in Resources */,
 			);
@@ -315,11 +340,14 @@
 				14999F08228D97F700B56E03 /* SubscriptionSelectorViewModel.swift in Sources */,
 				14999F0A228D97F700B56E03 /* SubscriptionGeneralInfoColletionViewDataSource.swift in Sources */,
 				14999F07228D97F700B56E03 /* SubscriptionPeriodCollectionViewCell.swift in Sources */,
-				14D07D52228C37F600522D51 /* CountryListViewModel.swift in Sources */,
-				14D07D83228C549A00522D51 /* CountryListTableViewDataSource.swift in Sources */,
+				140251932292A50000D50DD8 /* CountriesListProtocols.swift in Sources */,
+				14D07D83228C549A00522D51 /* CountriesListTableViewDataSource.swift in Sources */,
+				140251952292A7A900D50DD8 /* CountriesListViewModel.swift in Sources */,
+				1402518C2292942800D50DD8 /* IProductListService.swift in Sources */,
+				140251912292984500D50DD8 /* ProductServiceMock.swift in Sources */,
 				145C3C0822904074007B3F8D /* UINavigationBar.swift in Sources */,
 				14D07D2B228C13BA00522D51 /* AppDelegate.swift in Sources */,
-				1449FB43228D6BAA00317584 /* CountryListViewController.swift in Sources */,
+				1449FB43228D6BAA00317584 /* CountriesListViewController.swift in Sources */,
 				14999F05228D97F700B56E03 /* SubscriptionGeneralInfoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +404,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -383,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -433,6 +463,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -440,6 +471,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

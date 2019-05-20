@@ -24,23 +24,29 @@ protocol DataControllerDelegate: class {
 class DataController<T> {
 
     public weak var delegate: DataControllerDelegate?
-    fileprivate var  items:[[T]]
+    fileprivate var  sections:[[T]]
 
-    init(items:[[T]]){
-        self.items = items
+    init(sections:[[T]]){
+        self.sections = sections
     }
 
-    func set(items:[[T]]){
-        self.items = items
+    func set(sections:[[T]]){
+        self.sections = sections
         self.delegate?.dataControllerDidChangeContent(self)
     }
 
     func item(atIndexPath indexPath: IndexPath) -> T{
-        return self.items[indexPath.section][indexPath.item]
+        return self.sections[indexPath.section][indexPath.item]
     }
 
     func numberOfItems(inSection section: Int) -> Int{
-        return items[section].count
+        return sections[section].count
+    }
+    
+    var numberOfSections: Int {
+        get {
+            return self.sections.count
+        }
     }
 }
 

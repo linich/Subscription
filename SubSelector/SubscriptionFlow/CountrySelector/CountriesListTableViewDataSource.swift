@@ -9,7 +9,7 @@
 import UIKit
 
 let countryCellId = "borderColor"
-class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
+class CountriesListTableViewDataSource: NSObject, UITableViewDataSource {
     private let data: DataController<SubscriptionViewModel>
 
     init (data: DataController<SubscriptionViewModel>) {
@@ -23,6 +23,10 @@ class CountryListTableViewDataSource: NSObject, UITableViewDataSource {
         tableView.dataSource = self
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return data.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.numberOfItems(inSection: section)
     }
