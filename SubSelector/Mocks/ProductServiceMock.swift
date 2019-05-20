@@ -26,7 +26,7 @@ class ProductServiceMock: IProductListService {
         let callColor = UIColor(red: 0x69/CGFloat(0xff), green: 0xCF/CGFloat(0xA8), blue: 0xB5/CGFloat(0xff), alpha: 1)
 
         let callsProduct: ProductInfo = ProductInfo.init(id: "calls_product_id", name: "calls", color: callColor)
-        let smsProduct: ProductInfo = ProductInfo.init(id: "sms_product_id", name: "calls", color: smsColor)
+        let smsProduct: ProductInfo = ProductInfo.init(id: "sms_product_id", name: "sms", color: smsColor)
         let countries = [
             CountryInfo(id: "US", name: "United State", availableProducts: [callsProduct,smsProduct]),
             CountryInfo(id: "Belarus", name: "Belarus", availableProducts: [smsProduct]),
