@@ -1,0 +1,10 @@
+
+[{
+ "name": "Belarus",
+ "id": "belarus_id",
+ "products": [{
+              "id": "id1",
+              "name": "productName",
+              "color": "ffaabb"
+              }]
+ }]
