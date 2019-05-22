@@ -8,10 +8,24 @@
 
 import UIKit
 
+fileprivate extension Country {
+    func convertToCountryInfo() -> CountryInfo {
+        return CountryInfo(name: self.name, image: nil, availableProducts:self.products.map({ (product) -> CountryInfo.Product in
+            return product.converToProduct()
+        }))
+    }
+}
+
+fileprivate extension Country.Product {
+    func converToProduct() -> CountryInfo.Product {
+        return CountryInfo.Product(name: self.name.uppercased(), backgroundColor: UIColor(hex: self.color), textColor: UIColor.white)
+    }
+}
+
 class CountriesListViewModel: ICountriesListViewModel {
     public let data: DataController<CountryInfo>
 
-    private let productService: IProductService
+    private let apiLoader: APIRequestLoader<CountriesRequest>
 
     private var countriesList: [CountryInfo]{
         didSet {
@@ -28,15 +42,20 @@ class CountriesListViewModel: ICountriesListViewModel {
         }
     }
 
-    init(productService: IProductService) {
-        self.productService = productService
+    init(urlSession: URLSession = .shared) {
+        self.apiLoader = APIRequestLoader(apiRequest: CountriesRequest(), urlSession: urlSession)
         self.data = DataController(sections: [])
         self.countriesList = []
     }
 
     func loadData(){
-        self.productService.loadCountries { [weak self](countries) in
-            self?.loadCountriesCompleleted(countries: countries)
+        self.apiLoader.loadAPIRequest(requestData: CountryRequestData()) { (countries, error) in
+            guard let countries = countries else { return}
+            self.countriesList = countries.map({ (country) -> CountryInfo in
+                return country.convertToCountryInfo()
+            }).sorted(by: { (lhs, rhs) -> Bool in
+                return lhs.name < rhs.name
+            })
         }
     }
 
@@ -46,18 +65,6 @@ class CountriesListViewModel: ICountriesListViewModel {
 
     func filterItems(filter: String?) {
         self.filter = filter
-    }
-
-    fileprivate func loadCountriesCompleleted(countries: [ICountryInfo]) {
-        let models = countries.map { (countryInfo) -> CountryInfo in
-            let features = countryInfo.availableProducts.map({ (product) -> CountryInfo.Product in
-                return CountryInfo.Product(name: product.name.uppercased(),
-                                                     backgroundColor: product.color,
-                                                     textColor: UIColor.white)
-            })
-            return CountryInfo(name: countryInfo.name, image: UIImage(named: countryInfo.id), availableProducts: features)
-        }
-        self.countriesList = models
     }
 
     fileprivate func updateSections() {

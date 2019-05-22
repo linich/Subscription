@@ -13,15 +13,17 @@ import UIKit
 class SubscriptionFlow: NSObject, CountryListViewControllerDelegate {
     public var onActivateCompleted:  (()->())?
     private weak var rootController: UINavigationController?
+    private let urlSession: URLSession
 
-    init(rootController: UINavigationController) {
+    init(rootController: UINavigationController, session: URLSession = .shared) {
         self.rootController = rootController
+        self.urlSession = session
         rootController.navigationBar.hideBottomShadow()
     }
 
     public func start() {
         let countrySelectorViewController = CountriesListViewController()
-        countrySelectorViewController.viewModel = CountriesListViewModel(productService: ProductServiceMock())
+        countrySelectorViewController.viewModel = CountriesListViewModel(urlSession: urlSession)
         countrySelectorViewController.title = "Select a Country"
         countrySelectorViewController.delegate = self
         self.rootController?.pushViewController(countrySelectorViewController, animated: true)

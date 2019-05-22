@@ -17,7 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let navigationController = self.window?.rootViewController as? UINavigationController{
             //
-            self.subsriptionFlow = SubscriptionFlow(rootController: navigationController)
+            let configuration = URLSessionConfiguration.ephemeral
+            configuration.protocolClasses = [MockURLProtocol.self]
+            MockURLProtocol.requestHandler = {(request) in
+                return (URLResponse(), try! Data(contentsOf: Bundle.main.url(forResource: "CountriesWithManyItem", withExtension: "json")!))
+            }
+
+            let urlSession = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
+
+            self.subsriptionFlow = SubscriptionFlow(rootController: navigationController, session: urlSession)
             self.subsriptionFlow?.onActivateCompleted = { () in
                 print("finish")
             }
