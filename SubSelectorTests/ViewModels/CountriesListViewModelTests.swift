@@ -42,7 +42,7 @@ class CountriesListViewModelTests: XCTestCase, DataControllerDelegate {
 
         let countryInfo = viewModel.data.item(atIndexPath: IndexPath(row: 0, section: 0))
         XCTAssertEqual(countryInfo.name, "Belarus")
-        XCTAssertEqual(countryInfo.imageUri, "https://www.countryflags.io/belarus_id/flat/64.png")
+        XCTAssertEqual(countryInfo.imageUri, "https://www.countryflags.io/belarus_id/shiny/64.png")
         XCTAssertEqual(countryInfo.availableProducts.count, 1)
         XCTAssertEqual(countryInfo.availableProducts[0].name, "PRODUCTNAME")
         XCTAssertEqual(countryInfo.availableProducts[0].backgroundColor, UIColor(red: 0xff/CGFloat(255), green: 0xaa/CGFloat(255), blue: 0xbb/CGFloat(255), alpha: 1))
