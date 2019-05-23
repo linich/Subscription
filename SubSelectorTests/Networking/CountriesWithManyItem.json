@@ -4,12 +4,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -19,12 +19,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -34,12 +34,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -49,12 +49,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -64,12 +64,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -79,12 +79,17 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
+              },
+              {
+              "id": "product_sms",
+              "name": "mms",
+              "color": "8473FF"
               }
               ]
  },
@@ -94,12 +99,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -109,12 +114,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -124,12 +129,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -139,12 +144,18 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
+              }
+              ,
+              {
+              "id": "product_sms",
+              "name": "chat",
+              "color": "80AFFF"
               }
               ]
  },
@@ -154,12 +165,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -169,12 +180,17 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
+              },
+              {
+              "id": "product_sms",
+              "name": "mms",
+              "color": "8473FF"
               }
               ]
  },
@@ -184,12 +200,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -199,12 +215,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -214,12 +230,17 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
+              },
+              {
+              "id": "product_sms",
+              "name": "mms",
+              "color": "8473FF"
               }
               ]
  },
@@ -229,12 +250,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -244,12 +265,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -259,12 +280,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -274,12 +295,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -289,12 +310,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -304,12 +325,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -319,12 +340,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -334,12 +355,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -349,12 +370,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -364,12 +385,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -379,12 +400,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -394,12 +415,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -409,12 +430,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -424,12 +445,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  },
@@ -439,12 +460,12 @@
  "products": [{
               "id": "product_sms",
               "name": "sms",
-              "color": "ffaabb"
+              "color": "78c2d9"
               },
               {
               "id": "product_calls",
               "name": "calls",
-              "color": "ffaacc"
+              "color": "6ccfa8"
               }
               ]
  }
