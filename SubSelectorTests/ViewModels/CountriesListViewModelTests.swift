@@ -48,10 +48,6 @@ class CountriesListViewModelTests: XCTestCase, DataControllerDelegate {
         XCTAssertEqual(countryInfo.availableProducts[0].backgroundColor, UIColor(red: 0xff/CGFloat(255), green: 0xaa/CGFloat(255), blue: 0xbb/CGFloat(255), alpha: 1))
     }
 
-    func testLoadImage() {
-
-    }
-
     func dataControllerDidChangeContent<T>(_ dataController: DataController<T>) {
         self.expectation.fulfill()
     }
