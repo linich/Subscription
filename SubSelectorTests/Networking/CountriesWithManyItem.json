@@ -90,6 +90,11 @@
               "id": "product_sms",
               "name": "mms",
               "color": "8473FF"
+              },
+              {
+              "id": "product_chat",
+              "name": "chat",
+              "color": "80AFFF"
               }
               ]
  },
@@ -150,8 +155,7 @@
               "id": "product_calls",
               "name": "calls",
               "color": "6ccfa8"
-              }
-              ,
+              },
               {
               "id": "product_sms",
               "name": "chat",
