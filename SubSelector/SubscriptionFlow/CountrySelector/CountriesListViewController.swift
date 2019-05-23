@@ -37,7 +37,7 @@ class CountriesListViewController: UIViewController, UITableViewDelegate, UISear
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.viewModel?.filterItems(filter: searchText)
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let viewModel = self.viewModel  {

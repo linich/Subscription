@@ -93,7 +93,8 @@ fileprivate extension CountryInfo {
         cell.countryName.font = Theme.standartFont
 
         // Flag
-        cell.flagImageView.image = image
+        cell.flagImageView.image = nil
+        cell.flagImageView.downloaded(from: imageUri)
         cell.flagImageView.set(cornerRadius: Theme.cornerRadius)
         cell.flagImageView.layer.borderWidth = Theme.borderWidth
         cell.flagImageView.layer.borderColor = Theme.borderColor.cgColor

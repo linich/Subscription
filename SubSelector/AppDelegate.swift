@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var subsriptionFlow: SubscriptionFlow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         if let navigationController = self.window?.rootViewController as? UINavigationController{
             //
             let configuration = URLSessionConfiguration.ephemeral
@@ -24,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
 
             let urlSession = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
-
             self.subsriptionFlow = SubscriptionFlow(rootController: navigationController, session: urlSession)
             self.subsriptionFlow?.onActivateCompleted = { () in
                 print("finish")

@@ -9,7 +9,7 @@
 import UIKit
 
 class CountryTableViewCell: UITableViewCell {
-    @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var flagImageView: ImageView!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var productsStackView: UIStackView!
 }

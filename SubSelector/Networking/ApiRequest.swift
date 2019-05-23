@@ -26,10 +26,10 @@ class APIRequestLoader<T: APIRequest> {
     }
 
     func loadAPIRequest(requestData: T.RequestDataType,
-                        completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void) {
+                        completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void){
         do {
             let request = try apiRequest.makeRequest(from: requestData)
-            urlSession.dataTask(with: request) { data, response, error in
+            let dataTask = urlSession.dataTask(with: request) { data, response, error in
                 guard let data = data else { return completionHandler(nil, error) }
                 do {
                     let parsedResponse = try self.apiRequest.parseResponse(data: data)
@@ -38,7 +38,8 @@ class APIRequestLoader<T: APIRequest> {
                 catch {
                     completionHandler(nil, error)
                 }
-            }.resume()
+            }
+            dataTask.resume()
         } catch {completionHandler(nil, error) }
     }
 }

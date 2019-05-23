@@ -15,7 +15,7 @@ struct CountryInfo {
         let textColor: UIColor
     }
     let name: String
-    let image: UIImage?
+    let imageUri: String
     let availableProducts: [Product]
 }
 

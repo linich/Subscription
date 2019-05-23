@@ -8,15 +8,20 @@
 
 import UIKit
 
-fileprivate extension Country {
+fileprivate extension CountryResponse {
+    var flagImageUri: String {
+        get {
+            return "https://www.countryflags.io/\(self.id)/shiny/64.png"
+        }
+    }
     func convertToCountryInfo() -> CountryInfo {
-        return CountryInfo(name: self.name, image: nil, availableProducts:self.products.map({ (product) -> CountryInfo.Product in
+        return CountryInfo(name: self.name, imageUri: flagImageUri, availableProducts:self.products.map({ (product) -> CountryInfo.Product in
             return product.converToProduct()
         }))
     }
 }
 
-fileprivate extension Country.Product {
+fileprivate extension CountryResponse.Product {
     func converToProduct() -> CountryInfo.Product {
         return CountryInfo.Product(name: self.name.uppercased(), backgroundColor: UIColor(hex: self.color), textColor: UIColor.white)
     }
@@ -26,8 +31,7 @@ class CountriesListViewModel: ICountriesListViewModel {
     public let data: DataController<CountryInfo>
 
     private let apiLoader: APIRequestLoader<CountriesRequest>
-
-    private var countriesList: [CountryInfo]{
+    private var countriesList: [CountryResponse]{
         didSet {
             self.updateSections()
         }
@@ -51,9 +55,7 @@ class CountriesListViewModel: ICountriesListViewModel {
     func loadData(){
         self.apiLoader.loadAPIRequest(requestData: CountryRequestData()) { (countries, error) in
             guard let countries = countries else { return}
-            self.countriesList = countries.map({ (country) -> CountryInfo in
-                return country.convertToCountryInfo()
-            }).sorted(by: { (lhs, rhs) -> Bool in
+            self.countriesList = countries.sorted(by: { (lhs, rhs) -> Bool in
                 return lhs.name < rhs.name
             })
         }
@@ -68,19 +70,19 @@ class CountriesListViewModel: ICountriesListViewModel {
     }
 
     fileprivate func updateSections() {
-        guard let filter = self.filter,
-                filter.count > 0 else {
-            self.data.set(sections: [self.countriesList])
-            return
+        var items = self.countriesList
+        if let filter = self.filter,
+                filter.count > 0 {
+            let filterBlock: (CountryResponse) -> Bool = { (viewModel) -> Bool in
+                viewModel.name.lowercased().contains(filter.lowercased())
+            }
+
+            items = items.filter(filterBlock)
         }
 
-        let filterBlock: (CountryInfo) -> Bool = { (viewModel) -> Bool in
-            viewModel.name.lowercased().contains(filter.lowercased())
-        }
-
-        let items = [countriesList.filter(filterBlock)]
-
-        self.data.set(sections: items)
+        self.data.set(sections: [items.map({ (country) -> CountryInfo in
+            return country.convertToCountryInfo()
+        })])
     }
 }
 

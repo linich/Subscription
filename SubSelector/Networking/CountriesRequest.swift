@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Country: Decodable {
+public struct CountryResponse: Decodable {
     struct Product: Decodable {
         let id: String
         let name: String
@@ -25,16 +25,16 @@ public struct CountryRequestData {
 
 public struct CountriesRequest: APIRequest {
     typealias RequestDataType = CountryRequestData
-    typealias ResponseDataType = [Country]
+    typealias ResponseDataType = [CountryResponse]
 
     func makeRequest(from data: CountryRequestData =  CountryRequestData()) throws -> URLRequest {
         let components = URLComponents(string: "countries")!
         return URLRequest.init(url: components.url(relativeTo: BaseUrlProvider.baseUrl)!)
     }
 
-    func parseResponse(data: Data) throws -> [Country]{
+    func parseResponse(data: Data) throws -> [CountryResponse]{
         let decoder = JSONDecoder()
-        return try decoder.decode([Country].self, from: data)
+        return try decoder.decode([CountryResponse].self, from: data)
     }
 }
 

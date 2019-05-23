@@ -9,14 +9,14 @@
 import XCTest
 @testable import SubSelector
 
-extension Country: Equatable {
-    public static func ==(lhs: Country, rhs: Country) -> Bool {
+extension CountryResponse: Equatable {
+    public static func ==(lhs: CountryResponse, rhs: CountryResponse) -> Bool {
         return lhs.id == rhs.id && lhs.name == lhs.name && lhs.products == rhs.products
     }
 }
 
-extension Country.Product: Equatable {
-    public static func ==(lhs: Country.Product, rhs: Country.Product) -> Bool {
+extension CountryResponse.Product: Equatable {
+    public static func ==(lhs: CountryResponse.Product, rhs: CountryResponse.Product) -> Bool {
         return lhs.color == rhs.color && lhs.id == lhs.id && lhs.name == lhs.name
     }
 }
@@ -38,7 +38,7 @@ class CountriesRequestTests: XCTestCase {
         }
         
         let response = try request.parseResponse(data: jsonData)
-        let expectedProducts = [Country.Product(id: "id1", name: "productName", color: "ffaabb")]
-        XCTAssertEqual(response, [Country(name: "Belarus", id: "belarus_id", products: expectedProducts)])
+        let expectedProducts = [CountryResponse.Product(id: "id1", name: "productName", color: "ffaabb")]
+        XCTAssertEqual(response, [CountryResponse(name: "Belarus", id: "belarus_id", products: expectedProducts)])
     }
 }

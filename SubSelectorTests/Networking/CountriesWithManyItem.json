@@ -1,511 +1,451 @@
- [{
-  "id": "China",
-  "name": "China",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Wales",
-  "name": "Wales",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Belgium",
-  "name": "Belgium",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Japan",
-  "name": "Japan",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "France",
-  "name": "France",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "America",
-  "name": "America",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Germany  ",
-  "name": "Germany  ",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Canada",
-  "name": "Canada",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Spain, Brazil",
-  "name": "Spain, Brazil",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "South Africa",
-  "name": "South Africa",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Belgium",
-  "name": "Belgium",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "India",
-  "name": "India",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Mexico",
-  "name": "Mexico",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Argentina",
-  "name": "Argentina",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Ethiopia",
-  "name": "Ethiopia",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Jamaica",
-  "name": "Jamaica",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Brazil",
-  "name": "Brazil",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Sweden",
-  "name": "Sweden",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Denmark",
-  "name": "Denmark",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Switzerland",
-  "name": "Switzerland",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Ghana",
-  "name": "Ghana",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Bangladesh",
-  "name": "Bangladesh",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Switzerland",
-  "name": "Switzerland",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Nigeria",
-  "name": "Nigeria",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Sri Lanka ",
-  "name": "Sri Lanka ",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Ireland",
-  "name": "Ireland",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Italy",
-  "name": "Italy",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Niger ",
-  "name": "Niger ",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Sudan",
-  "name": "Sudan",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Italy ",
-  "name": "Italy ",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Argentina",
-  "name": "Argentina",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Pakistan",
-  "name": "Pakistan",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "Cuba",
-  "name": "Cuba",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  },
-  {
-  "id": "North Korea",
-  "name": "North Korea",
-  "products": [{
-               "id": "product_sms",
-               "name": "sms",
-               "color": "ffaabb"
-               },
-               {
-               "id": "product_calls",
-               "name": "calls",
-               "color": "ffaacc"
-               }
-               ]
-  }
-  ]
+[{
+ "id": "CN",
+ "name": "China",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "WF",
+ "name": "Wales",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "BE",
+ "name": "Belgium",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "JP",
+ "name": "Japan",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "FR",
+ "name": "France",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "US",
+ "name": "America",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "DE",
+ "name": "Germany",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "CA",
+ "name": "Canada",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "ES",
+ "name": "Spain",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "BR",
+ "name": "Brasil",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "ZA",
+ "name": "South Africa",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "BE",
+ "name": "Belgium",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "IN",
+ "name": "India",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "MX",
+ "name": "Mexico",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "AR",
+ "name": "Argentina",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "ET",
+ "name": "Ethiopia",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "JM",
+ "name": "Jamaica",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "SE",
+ "name": "Sweden",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "DK",
+ "name": "Denmark",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "CH",
+ "name": "Switzerland",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "GH",
+ "name": "Ghana",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "BD",
+ "name": "Bangladesh",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "NG",
+ "name": "Nigeria",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "LK",
+ "name": "Sri Lanka ",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "IE",
+ "name": "Ireland",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "IT",
+ "name": "Italy",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "SD",
+ "name": "Sudan",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "PK",
+ "name": "Pakistan",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "CU",
+ "name": "Cuba",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ },
+ {
+ "id": "KP",
+ "name": "North Korea",
+ "products": [{
+              "id": "product_sms",
+              "name": "sms",
+              "color": "ffaabb"
+              },
+              {
+              "id": "product_calls",
+              "name": "calls",
+              "color": "ffaacc"
+              }
+              ]
+ }
+ ]
