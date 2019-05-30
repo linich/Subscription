@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 struct SubscriptionPeriod {
     let attributedText: NSAttributedString
@@ -14,7 +15,7 @@ struct SubscriptionPeriod {
 }
 
 struct SubscriptionGeneralInfo {
-    let image: UIImage
+    let imageUrl: String
     let text: String
 }
 
@@ -22,27 +23,40 @@ protocol SubscriptionSelectorViewModelDelegate: class {
     func subscriptionSelectorViewModel(selectionChanged: SubscriptionSelectorViewModel)
 }
 
-class SubscriptionSelectorViewModel {
+fileprivate extension ProductsForContryResponse.Feature {
+    fileprivate func convert() -> SubscriptionGeneralInfo {
+        return SubscriptionGeneralInfo(imageUrl: imageUrl, text: title)
+    }
+}
+
+class SubscriptionSelectorViewModel: NSObject {
     private var subscriptionPeriodList: [SubscriptionPeriod]
+
     public let subscriptions: DataController<SubscriptionPeriod>
-    public var subscriptionGeneralInfoList: [SubscriptionGeneralInfo]
+    public let subscriptionGeneralInfo: DataController<SubscriptionGeneralInfo>
     public let phoneNumber: String
     public weak  var delegate: SubscriptionSelectorViewModelDelegate?
+    private let subscriptionLoader: APIRequestLoader<ProductsForContryRequest>
 
-    public init(_ countryId: String) {
-        // Use countryId to determine the list of subscriptions available for that country as well as a list of general information.
-        // In a real application, a list of SKProduct will be formed here and on its basis will be formed
-        // to list of SubscriptionPeriod
+    public init(_ countryId: String, urlSession: URLSession = .shared) {
         phoneNumber = "+375 29 223 43 12"
         subscriptionPeriodList = [
-            SubscriptionPeriod(attributedText: NSAttributedString(string: "3\nmonths\n$2.99"), selected: false),
-            SubscriptionPeriod(attributedText: NSAttributedString(string: "3-Day\ntrial\n$7.99.wk"), selected: true),
-            SubscriptionPeriod(attributedText: NSAttributedString(string: "12\nmonths\n$59.99"), selected: false)
         ]
-        subscriptionGeneralInfoList = [
-        SubscriptionGeneralInfo(image: #imageLiteral(resourceName: "Belarus"), text: "Something about Belarus"),
-        SubscriptionGeneralInfo(image: #imageLiteral(resourceName: "Belgium"), text: "Something about Belgium")]
+
+        subscriptionGeneralInfo = DataController<SubscriptionGeneralInfo>(sections: [[]])
         subscriptions = DataController(sections: [subscriptionPeriodList])
+        subscriptionLoader = APIRequestLoader(apiRequest: ProductsForContryRequest(), urlSession: urlSession)
+        super.init()
+        subscriptionLoader.loadAPIRequest(requestData: ProductsForContryRequestData(countryId: countryId)) {[weak self] (response, error) in
+            guard let response = response else { return }
+            let generalInfos = response.features.map(({ (feature) ->  SubscriptionGeneralInfo in
+                return feature.convert()
+            }))
+            let request = SKProductsRequest(productIdentifiers: Set(response.subscriptionProductIds))
+            request.start()
+            request.delegate = self
+            self?.subscriptionGeneralInfo.set(sections: [generalInfos])
+        }
     }
 
     public func activate(completion: (()->())?){
@@ -53,5 +67,11 @@ class SubscriptionSelectorViewModel {
         subscriptions.set(sections: [subscriptionPeriodList.enumerated().map({ (itemIndex, info) -> SubscriptionPeriod in
             return SubscriptionPeriod(attributedText: info.attributedText, selected: itemIndex == index)
         })])
+    }
+}
+
+extension SubscriptionSelectorViewModel: SKProductsRequestDelegate{
+    func productsRequest (_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
+
     }
 }

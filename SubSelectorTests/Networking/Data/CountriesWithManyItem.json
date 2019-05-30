@@ -179,26 +179,6 @@
               ]
  },
  {
- "id": "BE",
- "name": "Belgium",
- "products": [{
-              "id": "product_sms",
-              "name": "sms",
-              "color": "78c2d9"
-              },
-              {
-              "id": "product_calls",
-              "name": "calls",
-              "color": "6ccfa8"
-              },
-              {
-              "id": "product_sms",
-              "name": "mms",
-              "color": "8473FF"
-              }
-              ]
- },
- {
  "id": "IN",
  "name": "India",
  "products": [{

@@ -37,7 +37,8 @@ class SubscriptionSelectorViewController: UIViewController, SubscriptionSelector
 
     fileprivate func setupDataSources() {
         if let viewModel = self.viewModel {
-            self.subscriptionGeneralInfoCollectionViewDataSource = SubscriptionGeneralInfoColletionViewDataSource(collectionView: self.subscriptionGeneralInfosCollectionView, viewModel: viewModel)
+            viewModel.subscriptionGeneralInfo.delegate = self
+            self.subscriptionGeneralInfoCollectionViewDataSource = SubscriptionGeneralInfoColletionViewDataSource(collectionView: self.subscriptionGeneralInfosCollectionView, data: viewModel.subscriptionGeneralInfo)
             self.subscriptionPeriodsCollectionViewDataSource = SubscriptionPeriodsCollectionViewDataSource(subscriptions: viewModel.subscriptions)
             viewModel.subscriptions.delegate = self
 
@@ -58,6 +59,10 @@ class SubscriptionSelectorViewController: UIViewController, SubscriptionSelector
 
     // DataControllerDelegate
     func dataControllerDidChangeContent<T>(_ dataController: DataController<T>) {
-        self.subscriptionPeriodsCollectionView.reloadData()
+        if dataController is DataController<SubscriptionGeneralInfo> {
+            self.subscriptionGeneralInfosCollectionView.reloadData()
+        } else {
+            self.subscriptionPeriodsCollectionView.reloadData()
+        }
     }
 }

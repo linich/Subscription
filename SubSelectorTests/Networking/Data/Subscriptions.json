@@ -1,0 +1,20 @@
+{
+    "productName": "Product name",
+    "subscriptionProductIds": ["product_1", "product_2", "product_3"],
+    "features": [{
+                 "title": "Password",
+                 "subTitle": "Protect your data",
+                 "imageUrl": "https://cdn.mos.cms.futurecdn.net/LEiwedRoyyhLdDynnZA55V-650-80.jpg"
+                 },
+                 {
+                 "title": "To Do",
+                 "subTitle": "Plan your day",
+                 "imageUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/c8/6a/ac/c86aacaf-6827-0908-aad8-3ad2070161e8/AppIcon-0-1x_U007emarketing-0-85-220-6.png/690x0w.jpg"
+                 },
+                 {
+                 "title": "MindNode",
+                 "subTitle": "Spread of ideas",
+                 "imageUrl": "https://cdn.mos.cms.futurecdn.net/eU8fEy2bh3jSLveBRrKere-650-80.jpg"
+                 }
+                 ]
+}

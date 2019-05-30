@@ -94,7 +94,10 @@ fileprivate extension CountryInfo {
 
         // Flag
         cell.flagImageView.image = nil
-        cell.flagImageView.downloaded(from: imageUri)
+        cell.layoutIfNeeded()
+        if let url = NSURL(string: imageUri){
+            cell.flagImageView.image = UIImage.downloadImage(url: url, to: CGSize(width: 32, height: 32) , scale: UIScreen.main.scale)
+        }
         cell.flagImageView.set(cornerRadius: Theme.cornerRadius)
         cell.flagImageView.layer.borderWidth = Theme.borderWidth
         cell.flagImageView.layer.borderColor = Theme.borderColor.cgColor

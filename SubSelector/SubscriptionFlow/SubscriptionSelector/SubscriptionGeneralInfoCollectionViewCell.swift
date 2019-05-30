@@ -9,6 +9,6 @@
 import UIKit
 
 class SubscriptionGeneralInfoCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var imageView: UIImageView!
 }

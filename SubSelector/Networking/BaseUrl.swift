@@ -9,5 +9,5 @@
 import Foundation
 
 struct BaseUrlProvider {
-    static let baseUrl = URL.init(string: "https://productservice")!
+    static let baseUrl = URL.init(string: "https://service")!
 }

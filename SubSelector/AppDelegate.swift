@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let configuration = URLSessionConfiguration.ephemeral
             configuration.protocolClasses = [MockURLProtocol.self]
             MockURLProtocol.requestHandler = {(request) in
-                return (URLResponse(), try! Data(contentsOf: Bundle.main.url(forResource: "CountriesWithManyItem", withExtension: "json")!))
+                let resourceName =  (request.url?.absoluteString.contains("/products")) == true ? "Subscriptions" : "CountriesWithManyItem"
+                return (URLResponse(), try! Data(contentsOf: Bundle.main.url(forResource: resourceName, withExtension: "json")!))
             }
 
             let urlSession = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)

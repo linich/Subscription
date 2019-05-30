@@ -11,10 +11,10 @@ import UIKit
 
 class SubscriptionGeneralInfoColletionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    private let viewModel: SubscriptionSelectorViewModel
+    private let data: DataController<SubscriptionGeneralInfo>
     private weak var collectionView: UICollectionView?
-    init (collectionView: UICollectionView, viewModel: SubscriptionSelectorViewModel) {
-        self.viewModel = viewModel
+    init (collectionView: UICollectionView, data: DataController<SubscriptionGeneralInfo>) {
+        self.data = data
         self.collectionView = collectionView
         super.init()
     }
@@ -41,16 +41,21 @@ class SubscriptionGeneralInfoColletionViewDataSource: NSObject, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.subscriptionGeneralInfoList.count
+        return data.numberOfItems(inSection: section)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Details", for: indexPath) as? SubscriptionGeneralInfoCollectionViewCell  else {
             return UICollectionViewCell()
         }
-        let data = self.viewModel.subscriptionGeneralInfoList[indexPath.item]
-        cell.imageView.image = data.image
-        cell.label.text = data.text
+        let data = self.data.item(atIndexPath: indexPath)
+        if let url = NSURL.init(string: data.imageUrl) {
+            cell.imageView.image = UIImage.downloadImage(url: url, to: CGSize(width: 200, height: 200), scale: collectionView.traitCollection.displayScale)
+        } else {
+            cell.imageView.image = nil
+        }
+        cell.title.textColor = Theme.appTextColor
+        cell.title.text = data.text
         return cell
     }
 }

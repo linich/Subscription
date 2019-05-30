@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
 // Subscription Flow is responsible for how the subscription purchase process will occur.
 
 class SubscriptionFlow: NSObject, CountryListViewControllerDelegate {
     public var onActivateCompleted:  (()->())?
     private weak var rootController: UINavigationController?
+    private weak var subscriptionContainerViewController: UINavigationController?
     private let urlSession: URLSession
 
     init(rootController: UINavigationController, session: URLSession = .shared) {
@@ -31,7 +31,7 @@ class SubscriptionFlow: NSObject, CountryListViewControllerDelegate {
 
     func countryListViewController(countryListViewController controller: CountriesListViewController, didSelectCountryWithId countryId: String) {
         let subscriptionSelectorViewController = SubscriptionSelectorViewController()
-        let viewModel = SubscriptionSelectorViewModel(countryId)
+        let viewModel = SubscriptionSelectorViewModel(countryId, urlSession: urlSession)
 
         subscriptionSelectorViewController.viewModel = viewModel
         subscriptionSelectorViewController.onActivateCompleted = { [weak self] (controller: SubscriptionSelectorViewController) in
@@ -42,12 +42,13 @@ class SubscriptionFlow: NSObject, CountryListViewControllerDelegate {
 
         let navigationController = UINavigationController(rootViewController:subscriptionSelectorViewController)
         navigationController.navigationBar.hideBottomShadow()
-
+        subscriptionSelectorViewController.navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeSubscriptionController))
+        self.subscriptionContainerViewController = navigationController
         controller.present(navigationController, animated: true, completion: nil)
     }
 
-    private func onCountrySelected(_ controller: CountriesListViewController, countryId: String) {
-
+    @objc public func closeSubscriptionController() {
+        self.subscriptionContainerViewController?.dismiss(animated: true, completion: nil)
     }
 
     private func onActivate(_ controller: SubscriptionSelectorViewController) {
