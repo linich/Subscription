@@ -11,7 +11,7 @@ import UIKit
 let countryCellId = "CountryCell"
 class CountriesListTableViewDataSource: NSObject, UITableViewDataSource {
     private let data: DataController<CountryInfo>
-
+    private let serialQueue = DispatchQueue(label: "Decode queue")
     init (data: DataController<CountryInfo>) {
         self.data = data
         super.init()
@@ -96,7 +96,7 @@ fileprivate extension CountryInfo {
         cell.flagImageView.image = nil
         cell.layoutIfNeeded()
         if let url = NSURL(string: imageUri){
-            cell.flagImageView.image = UIImage.downloadImage(url: url, to: CGSize(width: 32, height: 32) , scale: UIScreen.main.scale)
+            cell.flagImageView.image = UIImage.downloadImage(url: url, to: cell.flagImageView.bounds.size , scale: UIScreen.main.scale)
         }
         cell.flagImageView.set(cornerRadius: Theme.cornerRadius)
         cell.flagImageView.layer.borderWidth = Theme.borderWidth
